@@ -4,7 +4,6 @@ import type { IEventRepository } from "../../src/domain/interfaces/event-reposit
 export class EventRepositoryInMemory implements IEventRepository {
   public events: Event[] = [];
 
-  // On simule des catégories existantes
   private categories = new Set<string>(["cat-music", "cat-tech", "cat-sport"]);
 
   async save(event: Event): Promise<Event> {

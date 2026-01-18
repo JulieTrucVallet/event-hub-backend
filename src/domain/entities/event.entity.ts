@@ -55,7 +55,6 @@ export class Event {
     }
   }
 
-  // Getters (lecture seule)
   get id() {
     return this.props.id;
   }

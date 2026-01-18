@@ -5,7 +5,7 @@ import type { IEventRepository } from "../../domain/interfaces/event-repository.
 export interface CreateEventPayload {
   title: string;
   description?: string;
-  startDate: string; // reçu du controller en string ISO
+  startDate: string;
   venueId: string;
   capacity: number;
   price?: number;
@@ -18,7 +18,6 @@ export class CreateEventUseCase {
   constructor(private readonly eventRepository: IEventRepository) {}
 
   async execute(payload: CreateEventPayload): Promise<{ id: string }> {
-    // Règle externe (DB) : catégorie doit exister
     const categoryExists = await this.eventRepository.categoryExists(payload.categoryId);
     if (!categoryExists) {
       throw new Error("Event category does not exist");

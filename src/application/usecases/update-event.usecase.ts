@@ -13,7 +13,6 @@ export class UpdateEventUseCase {
   constructor(private readonly eventRepository: IEventRepository) {}
 
   async execute(id: string, payload: UpdateEventPayload) {
-    // transformations (string -> Date)
     const data = {
       ...(payload.title !== undefined ? { title: payload.title } : {}),
       ...(payload.description !== undefined ? { description: payload.description } : {}),
