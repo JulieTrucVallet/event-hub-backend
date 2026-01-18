@@ -1,0 +1,8 @@
+### Update Event
+PUT http://localhost:8000/api/v1/events/db0a7d2b-fb22-4485-8d5c-6c225f5d5505
+Content-Type: application/json
+
+{
+  "title": "Event UPDATED",
+  "price": 30
+}
